@@ -1,5 +1,9 @@
 package interview;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class JavaBrains {
 	public static void numbers(int n) {
 		for (int i = 1; i <= n; i++) {
@@ -15,9 +19,26 @@ public class JavaBrains {
 		}
 	}
 
+	public static int[] returnIndex(int[] arr, int target) {
+		Map<Integer, Integer> vistedNumber = new HashMap<Integer, Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			int tar = target - arr[i];
+			if (vistedNumber.containsKey(tar)) {
+				return new int[] { i, vistedNumber.get(tar) };
+
+			}
+			vistedNumber.put(arr[i], i);
+		}
+		return new int[] { -1, -1 };
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		numbers(20);
+		System.out.println("***********");
+
+		int[] num = { 2, 3, 6, 4, 8 };
+		System.out.println(Arrays.toString(returnIndex(num, 5)));
 	}
 
 }
