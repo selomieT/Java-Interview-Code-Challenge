@@ -32,13 +32,31 @@ public class JavaBrains {
 		return new int[] { -1, -1 };
 	}
 
+	// reverse String
+	public static String reverseWithStringBuilder(String str) {
+		return new StringBuilder(str).reverse().toString();
+	}
+
+	public static String ReverseManually(String str) {
+		StringBuilder sBuilder = new StringBuilder();
+		for (int i = str.length() - 1; i >= 0; i--) {
+			sBuilder.append(str.charAt(i));
+		}
+		return sBuilder.toString();
+
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		numbers(20);
+		numbers(7);
 		System.out.println("***********");
 
 		int[] num = { 2, 3, 6, 4, 8 };
 		System.out.println(Arrays.toString(returnIndex(num, 5)));
+		System.out.println("***********");
+
+		System.out.println(reverseWithStringBuilder("seli"));
+		System.out.println(ReverseManually("seli"));
 	}
 
 }
