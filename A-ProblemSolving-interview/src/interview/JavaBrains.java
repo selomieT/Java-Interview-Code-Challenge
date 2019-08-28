@@ -1,6 +1,5 @@
 package interview;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,17 +45,38 @@ public class JavaBrains {
 
 	}
 
+	// reverse number
+
+	// public static void reverseNumber(int num) {
+	// while (num > 0) {
+	// System.out.print(num % 10);
+	// num = num / 10;
+	// }
+	// }
+	public static int reverseNumber(int num) {
+		int result = 0;
+		while (num > 0) {
+			result = result * 10 + num % 10;
+
+			num = num / 10;
+		}
+		return result;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		numbers(7);
+		// numbers(7);
+		// System.out.println("***********");
+		//
+		// int[] num = { 2, 3, 6, 4, 8 };
+		// System.out.println(Arrays.toString(returnIndex(num, 5)));
+		// System.out.println("***********");
+		//
+		// System.out.println(reverseWithStringBuilder("seli"));
+		// System.out.println(ReverseManually("seli"));
 		System.out.println("***********");
-
-		int[] num = { 2, 3, 6, 4, 8 };
-		System.out.println(Arrays.toString(returnIndex(num, 5)));
-		System.out.println("***********");
-
-		System.out.println(reverseWithStringBuilder("seli"));
-		System.out.println(ReverseManually("seli"));
+		// reverseNumber(1234);
+		System.out.println(reverseNumber(5678));
 	}
 
 }
